@@ -17,6 +17,8 @@ include stuff.mk
 
 ## Content
 
+Sources += $(wildcard *.R)
+
 ######################################################################
 
 ### Makestuff

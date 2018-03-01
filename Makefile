@@ -1,7 +1,8 @@
 # Life_history
 ### Hooks for the editor to set the default target
+
 current: target
--include $(ms)/target.mk
+-include target.mk
 
 ##################################################################
 
@@ -17,6 +18,8 @@ include sub.mk
 ## Content
 
 Sources += $(wildcard *.R)
+
+frontier.Rout: frontier.R
 
 ######################################################################
 

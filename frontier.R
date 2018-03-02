@@ -31,7 +31,7 @@ poly <- function(x, f, col){
 aplot <- function(x, f){
 	cplot(x, f)
 	lines(x,f)
-	poly(x, 0*f+max(f), "lightgrey")
+	poly(x, 0*f+max(f), "grey")
 	poly(x, f, "white")
 	text(5.5, 1.0 , "inaccessible")
 }

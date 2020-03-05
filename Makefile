@@ -1,17 +1,7 @@
 # Life_history
-### Hooks for the editor to set the default target
 
 current: target
 -include target.mk
-
-##################################################################
-
-
-# make files
-
-Sources = Makefile .ignore README.md sub.mk LICENSE.md
-include sub.mk
-# include $(ms)/perl.def
 
 ##################################################################
 
@@ -25,11 +15,22 @@ frontier.Rout: frontier.R
 
 ### Makestuff
 
-## Change this name to download a new version of the makestuff directory
-# Makefile: start.makestuff
+Sources += Makefile
 
--include $(ms)/git.mk
--include $(ms)/visual.mk
+## Sources += content.mk
+## include content.mk
 
--include $(ms)/wrapR.mk
-# -include $(ms)/oldlatex.mk
+Ignore += makestuff
+msrepo = https://github.com/dushoff
+Makefile: makestuff/Makefile
+makestuff/Makefile:
+	git clone $(msrepo)/makestuff
+	ls $@
+
+-include makestuff/os.mk
+
+## -include makestuff/wrapR.mk
+
+-include makestuff/git.mk
+-include makestuff/visual.mk
+-include makestuff/projdir.mk

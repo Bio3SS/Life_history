@@ -10,6 +10,7 @@ current: target
 Sources += $(wildcard *.R)
 
 frontier.Rout: frontier.R
+meancomp.Rout: meancomp.R
 
 ######################################################################
 

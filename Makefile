@@ -5,21 +5,28 @@ current: target
 
 ##################################################################
 
-## Content
+aggression.Rout: aggression.R
+	$(pipeR)
+
+aggressionPlots.Rout: aggressionPlots.R aggression.rds
+	$(pipeR)
+
+##################################################################
+
+## Older Content
 
 Sources += $(wildcard *.R)
 
 frontier.Rout: frontier.R
+	$(run-R)
 meancomp.Rout: meancomp.R
+	$(run-R)
 
 ######################################################################
 
 ### Makestuff
 
 Sources += Makefile
-
-## Sources += content.mk
-## include content.mk
 
 Ignore += makestuff
 msrepo = https://github.com/dushoff
@@ -30,7 +37,8 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
--include makestuff/wrapR.mk
+-include makestuff/pipeR.mk
+-include makestuff/pdfpages.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
